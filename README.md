@@ -12,25 +12,29 @@
 
 Your RAG pipeline retrieves documents and passes them to an LLM.
 The LLM generates a response that *sounds* correct.
-But is every claim actually grounded in your context — or did the model
-fabricate some of it?
+But is every claim actually grounded in your context — or did the model fabricate some of it?
 
 **HallucinationBench answers that question instantly.**
 
 ---
 
 ## Quickstart
+
+Install dependencies:
+
 ```bash
 pip install openai python-dotenv
 ```
 
 Set your OpenAI API key:
+
 ```bash
 # .env
 OPENAI_API_KEY=your_key_here
 ```
 
 Run your first evaluation:
+
 ```python
 from hallucinationbench import score
 
@@ -51,6 +55,7 @@ print(result)
 ```
 
 Output:
+
 ```
 Verdict          : FAIL
 Faithfulness     : 0.40
@@ -68,6 +73,7 @@ Hallucinated claims  (3):
 ---
 
 ## The result object
+
 ```python
 result.faithfulness_score    # float 0.0 – 1.0
 result.grounded_claims       # list of supported statements
@@ -87,6 +93,7 @@ result.model                 # judge model used
 ## Streamlit demo
 
 Run the interactive demo locally:
+
 ```bash
 streamlit run app.py
 ```
@@ -126,6 +133,7 @@ Typical cost: **~$0.001 per evaluation** (well under a tenth of a cent).
 ---
 
 ## Project structure
+
 ```
 hallucinationbench/
 ├── hallucinationbench/
@@ -149,8 +157,7 @@ MIT — free to use, modify, and distribute.
 
 ## Contributing
 
-Pull requests are welcome. Please open an issue first to discuss
-what you would like to change.
+Pull requests are welcome. Please open an issue first to discuss what you would like to change.
 
 ---
 
